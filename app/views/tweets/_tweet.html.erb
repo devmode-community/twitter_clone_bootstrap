@@ -1,0 +1,9 @@
+<li>
+  <p>
+    <%= link_to "@#{tweet.user.username}", user_path(tweet.user)  %>
+  </p>
+
+  <p>
+    <%= tweet.content  %>
+  </p>
+</li>

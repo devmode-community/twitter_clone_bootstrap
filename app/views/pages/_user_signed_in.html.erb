@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col col-md-4">
+    <%= simple_form_for(@tweet) do |f| %>
+      <%= f.input :content, as: :text, label: false, placeholder: 'What do you have in your mind now?', input_html: { maximum: 140 } %>
+
+      <%= f.submit 'Post', class: 'btn btn-success btn-block' %>
+    <% end %>
+
+    <ul>
+      <li>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col col-md-8">
+    <ul>
+      <% @tweets.each do |tweet|  %>
+        <%= render 'tweets/tweet', tweet: tweet %>
+      <% end %>
+    </ul>
+  </div>
+</div>

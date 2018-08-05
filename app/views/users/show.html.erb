@@ -1,0 +1,5 @@
+<%= render 'users/user', user: @user %>
+
+<% @tweets.each do |tweet| %>
+  <%= render 'tweets/tweet', tweet: tweet %>
+<% end %>

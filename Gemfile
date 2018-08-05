@@ -18,6 +18,7 @@ gem 'pry-rails'
 gem 'rspec'
 gem 'jquery-rails'
 gem 'devise', '~> 4.3'
+gem 'simple_form'
 gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do

@@ -10,6 +10,16 @@
 
   <body>
     <div class="container main-container">
+      <% if notice %>
+        <div class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+      <% elsif alert %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
