@@ -26,4 +26,8 @@ class User < ApplicationRecord
   def unfollow!(other_user)
     relationships.find_by(followed_id: other_user.id).destroy
   end
+
+  def picture
+    "https://picsum.photos/100/100/?random"
+  end
 end

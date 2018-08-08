@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= render 'layouts/header_user_not_signed_in' %>
+    <% else %>
+      <%= render 'layouts/header_user_signed_in' %>
+    <% end %>
+
     <div class="container main-container">
       <% if notice %>
         <div class="alert alert-success" role="alert">

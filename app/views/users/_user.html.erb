@@ -1,8 +1,18 @@
-@<%= user.username %>
-<% if user != current_user %>
-  <% if current_user.following?(user) %>
-    <%= link_to 'unfollow', relationship_path(user_id: user.id), method: :delete, class: 'btn btn-danger' %>
-  <% else %>
-    <%= link_to 'follow', relationships_path(user_id: user.id),   method: :post, class: 'btn btn-success' %>
-  <% end %>
-<% end %>
+<div class="card">
+  <div class="card-header">
+    <%= link_to "@#{user.username}", user_path(user)  %> |
+    <small><%= "#{user.tweets.count}" %> tweets</small>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">
+      <% if user != current_user %>
+        <% if current_user.following?(user) %>
+          <%= unfollow_button(user) %>
+        <% else %>
+          <%= follow_button(user) %>
+        <% end %>
+      <% end %>
+    </p>
+  </div>
+</div>

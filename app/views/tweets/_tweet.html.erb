@@ -1,9 +1,9 @@
-<li>
-  <p>
+<div class="card">
+  <div class="card-header">
     <%= link_to "@#{tweet.user.username}", user_path(tweet.user)  %>
-  </p>
+  </div>
 
-  <p>
-    <%= tweet.content  %>
-  </p>
-</li>
+  <div class="card-body">
+    <p class="card-text"><%= tweet.content  %></p>
+  </div>
+</div>
