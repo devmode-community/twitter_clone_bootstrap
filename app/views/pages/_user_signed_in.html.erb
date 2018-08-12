@@ -1,23 +1,40 @@
 <div class="row">
-  <div class="col col-md-4">
+  <div class="col col-md-3">
+    <div class="card">
+      <div class="card-header">
+        Profile
+      </div>
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div>
+  <div class="col col-md-6">
     <div class="card">
       <div class="card-body">
         <p class="card-text">
           <%= simple_form_for(@tweet) do |f| %>
-            <%= f.input :content, as: :text, label: false, placeholder: 'What do you have in your mind now?', input_html: { maximum: 140 } %>
+            <%= f.input :content, as: :text, label: false, placeholder: 'What do you have in your mind now?', input_html: { maximum: 140, class: "textarea" } %>
 
-            <%= f.submit 'Post', class: 'btn btn-success btn-block' %>
+            <%= f.button :submit, 'Post', class: 'btn btn-success btn-block' %>
           <% end %>
         </p>
       </div>
     </div>
+    
+    <% @tweets.each do |tweet|  %>
+      <%= render 'tweets/tweet', tweet: tweet %>
+    <% end %>
+    
   </div>
-
-  <div class="col col-md-8">
-    <ul>
-      <% @tweets.each do |tweet|  %>
-        <%= render 'tweets/tweet', tweet: tweet %>
-      <% end %>
-    </ul>
+  <div class="col col-md-3">
+    <div class="card">
+      <div class="card-header">
+        Who to follow
+      </div>
+      <div class="card-body">
+      
+      </div>
+    </div>
   </div>
 </div>

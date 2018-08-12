@@ -4,6 +4,24 @@
   </div>
 
   <div class="card-body">
+    <strong><%= tweet.user.username%></strong>
     <p class="card-text"><%= tweet.content  %></p>
+    
+    <% if current_user.id == tweet.user_id %>
+      <nav class="level">
+  				<div class="level-left is-mobile">
+  					<%= link_to tweet, class: "level-item" do %>
+  					  <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+  					<% end %>
+  					<%= link_to edit_tweet_path(tweet), class: "level-item" do %>
+  					  <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+  					<% end %>
+  					<%= link_to tweet, method: :delete, data: { confirm: "Are you sure you want to delete this tweeet?" } do %>
+  							<span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+  					<% end %>
+  				</div>
+  			</nav>
+    <% end %>
+    
   </div>
 </div>
